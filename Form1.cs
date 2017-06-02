@@ -32,16 +32,20 @@ namespace Game
             {
                 moveY = -speed;
             }
-            else if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Down)
             {
                 moveY = speed;
             }
-            else if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.Right)
             {
                 moveX = speed;
             }
-            else {
+            if(e.KeyCode == Keys.Left){
                 moveX = -speed;
+            }
+            if (e.KeyCode == Keys.Space) {
+                pictureBox2.Left = pictureBox1.Left;
+                pictureBox2.Top = pictureBox1.Top;
             }
         }
 
