@@ -25,7 +25,6 @@ namespace Game
             //下
             moveY = speed;
             moveX = 0;
-            timer1.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
