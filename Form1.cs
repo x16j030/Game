@@ -20,38 +20,35 @@ namespace Game
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //下
-            moveY = speed;
-            moveX = 0;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //右
-            moveX = speed;
-            moveY = 0;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //左
-            moveX = -speed;
-            moveY = 0;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //上
-            moveY = -speed;
-            moveX = 0;
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             pictureBox1.Left += moveX;
             pictureBox1.Top += moveY;
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                moveY = -speed;
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                moveY = speed;
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                moveX = speed;
+            }
+            else {
+                moveX = -speed;
+            }
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            moveX = 0;
+            moveY = 0;
         }
     }
 }
